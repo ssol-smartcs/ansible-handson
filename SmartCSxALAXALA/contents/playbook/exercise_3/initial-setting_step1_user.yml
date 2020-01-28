@@ -1,0 +1,41 @@
+---
+- name: user settings from console using SartCS
+  hosts: smartcs
+  gather_facts: no
+
+  vars:
+  - ansible_connection: network_cli
+  - ansible_network_os: smartcs
+  - inituser: 'operator'
+  - username: 'alaxala'
+  - password: 'secret2230'
+
+  tasks:
+  - name: rename login user and setting password
+    smartcs_tty_command:
+      tty: '1'
+      custom_response: on
+      custom_response_delete_nl: on
+      recvchar:
+      - 'login: '
+      - 'Password: '
+      - 'Old username:'
+      - 'New username:'
+      - 'New password:'
+      - 'Retype new password:'
+      - '> '
+      - '# '
+      - '!# '
+      sendchar:
+      - '{{ inituser }}'
+      - 'enable'
+      - 'rename user'
+      - '{{ inituser }}'
+      - '{{ username }}'
+      - 'password'
+      - '{{ password }}'
+      - '{{ password }}'
+      - 'password enable-mode'
+      - '{{ password }}'
+      - '{{ password }}'
+      - 'exit'

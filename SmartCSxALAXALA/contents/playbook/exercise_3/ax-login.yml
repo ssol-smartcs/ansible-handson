@@ -1,0 +1,20 @@
+---
+- name: show version command from console using SmartCS
+  hosts: smartcs
+  gather_facts: no
+
+  vars:
+  - ansible_connection: network_cli
+  - ansible_network_os: smartcs
+
+  tasks:
+  - name: show version
+    smartcs_tty_command:
+      tty: '1'
+      recvchar:
+      - 'login: '
+      - '> '
+      sendchar:
+      - 'operator'
+      - 'show version'
+      - 'exit'
