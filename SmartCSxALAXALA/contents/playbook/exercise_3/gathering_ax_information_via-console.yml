@@ -1,0 +1,9 @@
+---
+- name: login by console
+  import_playbook: console_login.yml
+
+- name: gathering ax information
+  import_playbook: console_gathering_ax_information.yml
+
+- name: logout by console
+  import_playbook: console_logout.yml

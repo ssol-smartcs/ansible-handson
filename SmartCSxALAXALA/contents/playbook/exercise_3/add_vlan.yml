@@ -1,0 +1,36 @@
+---
+- name: add vlan
+  hosts: ax
+  gather_facts: no 
+
+  vars:
+  - ansible_connection: network_cli
+  - ansible_network_os: ax
+  - ansible_command_timeout: 60
+  - ansible_become: yes
+  - ansible_become_method: enable
+  - ansible_become_pass: 'secret2230'
+  - vid: '2000'
+  - ipaddr: '192.168.0.1'
+  - netmask: '255.255.255.0'
+  - portif : '0/2'
+
+  tasks:
+  - name: configure vlan
+    ax_config:
+      lines:
+      - 'vlan {{ vid }}'
+  
+  - name: configure interface vlan <vid>
+    ax_config:
+      lines:
+      - 'ip address {{ ipaddr }} {{ netmask }}'
+      parents: 'interface vlan {{ vid }}'
+  
+  - name: vlan configuration to port
+    ax_config:
+      lines:
+      - 'switchport mode trunk'
+      - 'switchport trunk allowed vlan add {{ vid }}'
+      parents: 'interface gigabitethernet {{ portif }}'
+      save_when: modified

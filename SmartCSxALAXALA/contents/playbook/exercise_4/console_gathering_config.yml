@@ -1,0 +1,22 @@
+---
+- name: gathering configration from console using SmartCS
+  hosts: smartcs
+  
+  vars:
+  - ansible_connection: network_cli
+  - ansible_network_os: ax
+  - ansible_become: yes
+  - ansible_become_method: enable
+  - ansible_become_pass: 'secret2230'
+  - ansible_user: "port01"
+  - ansible_password: "secret01"
+  - ansible_port: 9301
+
+  tasks:
+  - name: show commands
+    ax_command:
+      commands:
+        - show ip interface
+        - show vlan
+        - show access-filter
+        - show running-config

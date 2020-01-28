@@ -1,0 +1,9 @@
+---
+- name: login by console
+  import_playbook: console_login.yml
+
+- name: add acl configration
+  import_playbook: console_add_acl.yml
+
+- name: logout by console
+  import_playbook: console_logout.yml
