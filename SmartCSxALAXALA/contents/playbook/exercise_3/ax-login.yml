@@ -2,15 +2,17 @@
 - name: show version command from console using SmartCS
   hosts: smartcs
   gather_facts: no
-
+  
   vars:
+  #ttynoはユーザごとに異なります。Playbook作成時に変更してください。
   - ansible_connection: network_cli
   - ansible_network_os: smartcs
-
+  - ttyno: '1'
+  
   tasks:
-  - name: show version
+  - name: show version 
     smartcs_tty_command:
-      tty: '1'
+      tty: '{{ ttyno }}'
       recvchar:
       - 'login: '
       - '> '
