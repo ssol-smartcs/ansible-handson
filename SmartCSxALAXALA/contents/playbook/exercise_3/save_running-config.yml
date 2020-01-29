@@ -6,10 +6,11 @@
   vars:
   - ansible_connection: network_cli
   - ansible_network_os: ax
+  - ansible_command_timeout: 60
   - ansible_become: yes
   - ansible_become_method: enable
   - ansible_become_pass: 'secret2230'
-
+  
   tasks:
   - name: gather ax facts all
     ax_facts:
