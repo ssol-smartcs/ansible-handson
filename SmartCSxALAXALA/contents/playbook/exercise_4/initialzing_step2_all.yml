@@ -1,18 +1,20 @@
 ---
-- name: initialzing all setting and log
+- name: initializing all setting and log
   hosts: smartcs
   gather_facts: no
   
   vars:
+  #ttynoはユーザごとに異なります。Playbook作成時に変更してください。
   - ansible_connection: network_cli
   - ansible_network_os: smartcs
   - ansible_command_timeout: 300
   - inituser: 'operator'
+  - ttyno: '1'
   
   tasks:
   - name: "smartcs_tty_command"
     smartcs_tty_command:
-      tty: '1'
+      tty: '{{ ttyno }}'
       cmd_timeout: 180
       custom_response: on
       custom_response_delete_nl: on
