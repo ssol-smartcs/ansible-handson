@@ -3,6 +3,7 @@
   hosts: smartcs
   
   vars:
+  #ansible_user、ansible_password、ansible_portはユーザごとに異なります。Playbook作成時に変更してください。
   - ansible_connection: network_cli
   - ansible_network_os: ax
   - ansible_become: yes
