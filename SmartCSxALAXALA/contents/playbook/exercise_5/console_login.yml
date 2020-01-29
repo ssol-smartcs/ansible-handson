@@ -4,14 +4,16 @@
   gather_facts: no
   
   vars:
+  #ttynoはユーザごとに異なります。Playbook作成時に変更してください。
   - ansible_connection: network_cli
   - ansible_network_os: smartcs
   - ansible_command_timeout: 60
+  - ttyno: '1'
 
   tasks:
   - name: login ax2230
     smartcs_tty_command:
-      tty: '1'
+      tty: '{{ ttyno }}'
       recvchar:
       - 'login: '
       - 'Password: '
