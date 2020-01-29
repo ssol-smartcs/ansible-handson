@@ -3,6 +3,7 @@
   hosts: smartcs
   
   vars:
+  #ansible_user、ansible_password、ansible_port、RHEL_IPはユーザごとに異なります。Playbook作成時に変更してください。
   - ansible_connection: network_cli
   - ansible_network_os: ax
   - ansible_become: yes
@@ -11,12 +12,13 @@
   - ansible_user: "port01"
   - ansible_password: "secret01"
   - ansible_port: 9301
+  - RHEL_IP: '192.168.127.2'
 
   tasks:
   - name: configure access list
     ax_config:
       lines:
-        - 10 permit host 192.168.127.2
+        - 10 permit host {{ RHEL_IP }}
         - 20 deny any
       parents: ip access-list standard "access ansible host only"
       save_when: changed
