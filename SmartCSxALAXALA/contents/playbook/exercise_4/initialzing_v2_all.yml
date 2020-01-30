@@ -4,17 +4,20 @@
   gather_facts: no
   
   vars:
-  #ttynoはユーザごとに異なります。Playbook作成時に変更してください。
+  ### Variables that NEED to Change ###
+  - tty_no: '1'
+  
+  ### Variables that should NOT change ###
   - ansible_connection: network_cli
   - ansible_network_os: smartcs
   - ansible_command_timeout: 300
-  - inituser: 'operator'
-  - ttyno: '1'
+  
+  - ax_init_user: 'operator'
   
   tasks:
   - name: "smartcs_tty_command"
     smartcs_tty_command:
-      tty: '{{ ttyno }}'
+      tty: '{{ tty_no }}'
       cmd_timeout: 180
       custom_response: on
       custom_response_delete_nl: on
@@ -27,7 +30,7 @@
       - 'Do you wish to initialize flash memory? (y/n):'
       - 'Do you wish to clear critical-logging? (y/n):' 
       sendchar:
-      - '{{ inituser }}'
+      - '{{ ax_init_user }}'
       - 'enable'
       - 'line console speed 9600 save'
       - 'trace-monitor enable save'
@@ -47,7 +50,7 @@
       - 'clear ip dhcp server statistics'
       - 'reload'
       - 'y'
-      - 'operator'
+      - '{{ ax_init_user }}'
       - 'enable'
       - 'format flash__NOWAIT__:5'
       - 'y'
