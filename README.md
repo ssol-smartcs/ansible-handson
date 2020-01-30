@@ -10,4 +10,8 @@ SmartCS x Ansible のハンズオンコンテンツをまとめたページと�
 
 ### [SmartCS x ALAXALA x Ansible ハンズオン](./SmartCSxALAXALA/README.md)
 
+- 時間：1月31日（金）13時〜18時（受付12時30分より）  
+場所：エーピーコミュニケーションズ 様
+
+
 
