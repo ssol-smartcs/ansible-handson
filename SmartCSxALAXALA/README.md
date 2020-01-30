@@ -1,6 +1,6 @@
 # SmartCS x ALAXALA x Ansible ハンズオン  
 
-![ansibleXsmartcsXalaxala.png](./contents/image/ansibleXsmartcsXalaxala.png)
+![handson_logo.png](./contents/image/handson_logo.png)
 
 
 ## 本ドキュメントについて
