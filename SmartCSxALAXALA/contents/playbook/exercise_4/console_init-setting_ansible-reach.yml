@@ -3,22 +3,28 @@
   hosts: smartcs
   
   vars:
-  #ansible_user、ansible_password、ansible_port、ipaddrはユーザごとに異なります。Playbook作成時に変更してください。
-  - ansible_connection: network_cli
-  - ansible_network_os: ax
-  - ansible_become: yes
-  - ansible_become_method: enable
-  - ansible_become_pass: 'secret2230'
+  ### Variables that NEED to Change ###
   - ansible_user: "port01"
   - ansible_password: "secret01"
   - ansible_port: 9301
-  - ipaddr: '192.168.128.2'  
+  
+  - ax_ipaddr: '192.168.128.2'  
+  
+  ### Variables that should NOT change ###
+  - ansible_connection: network_cli
+  - ansible_network_os: ax
+  
+  - ansible_become: yes
+  - ansible_become_method: enable
+  - ansible_become_pass: 'secret2230'
+  
+  - ax_subnet: '255.255.255.0'
 
   tasks:
   - name: set ipaddr to intarface vlan 1
     ax_config:
       lines:
-        - 'ip address {{ ipaddr }} 255.255.255.0'
+        - 'ip address {{ ax_ipaddr }} {{ ax_subnet }}'
       parents: interface vlan 1
       save_when: changed
   
