@@ -4,15 +4,17 @@
   gather_facts: no
   
   vars:
-  #ttynoはユーザごとに異なります。Playbook作成時に変更してください。
+  ### Variables that NEED to Change ###
+  - tty_no: '1'
+
+  ### Variables that should NOT change ###
   - ansible_connection: network_cli
   - ansible_network_os: smartcs
-  - ttyno: '1'
   
   tasks:
   - name: show version 
     smartcs_tty_command:
-      tty: '{{ ttyno }}'
+      tty: '{{ tty_no }}'
       recvchar:
       - 'login: '
       - '> '

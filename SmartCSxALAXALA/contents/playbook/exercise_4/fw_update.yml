@@ -4,23 +4,27 @@
   gather_facts: no
   
   vars:
-  #ftpserver、ftpuser、ftppass、imgpath、ttynoはユーザごとに異なります。Playbook作成時に変更してください。
+  ### Variables that NEED to Change ###
+  - tty_no: '1'
+  
+  - ftp_server: '192.168.127.2'
+  - ftp_user: 'rhel01'
+  - ftp_password: 'secret01'
+  - fwimg_path: '/home/rhel01'
+  
+  ### Variables that should NOT change ###
   - ansible_connection: network_cli
   - ansible_network_os: smartcs
   - ansible_command_timeout: 300
-  - username: 'alaxala'
-  - password: 'secret2230'
-  - ftpserver: '192.168.127.2'
-  - ftpuser: 'rhel01'
-  - ftppass: 'secret01'
-  - imgpath: '/home/rhel01'
+  
+  - ax_user: 'alaxala'
+  - ax_password: 'secret2230'
   - verupimg: 'AX2230L20210-01.bin'
-  - ttyno: '1'
 
   tasks:
   - name: ax ppupdate 
     smartcs_tty_command:
-      tty: '{{ ttyno }}'
+      tty: '{{ tty_no }}'
       cmd_timeout: 180
       custom_response: on
       custom_response_delete_nl: on
@@ -33,22 +37,22 @@
       - 'ftp> '
       - 'Do you wish to continue? (y/n)'
       sendchar:
-      - '{{ username }}'
-      - '{{ password }}'
+      - '{{ ax_user }}'
+      - '{{ ax_password }}'
       - 'show version'
       - 'enable'
-      - '{{ password }}'
-      - 'ftp {{ ftpserver }}'
-      - '{{ ftpuser }}'
-      - '{{ ftppass }}'
+      - '{{ ax_password }}'
+      - 'ftp {{ ftp_server }}'
+      - '{{ ftp_user }}'
+      - '{{ ftp_password }}'
       - 'binary'
-      - 'cd {{ imgpath }}'
+      - 'cd {{ fwimg_path }}'
       - 'get {{ verupimg }} k.img'
       - 'bye'
       - 'ppupdate ramdisk k.img'
       - 'y'
-      - '{{ username }}'
-      - '{{ password }}'
+      - '{{ ax_user }}'
+      - '{{ ax_password }}'
       - 'show version'
       - 'exit'
     register: result
