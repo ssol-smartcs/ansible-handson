@@ -23,7 +23,8 @@ Ansible × SmartCS × ALAXALAネットワークス
 
 ## ハンズオン資料
 
-- [資料のDL](./contents/pdf/handson_materials.pdf)
+- [資料](./contents/pdf/handson_materials.pdf)  
+ハンズオンの座学パートで使用する資料となります。
 
 ## ハンズオン内容
 
