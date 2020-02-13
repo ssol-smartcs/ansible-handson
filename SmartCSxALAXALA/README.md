@@ -21,6 +21,10 @@ Ansible × SmartCS × ALAXALAネットワークス
 ### 構成図
 ![practice_environment.png](./contents/image/practice_environment.png)
 
+## ハンズオン資料
+
+- [資料](./contents/pdf/handson_materials.pdf)  
+ハンズオンの座学パートで使用する資料となります。
 
 ## ハンズオン内容
 
