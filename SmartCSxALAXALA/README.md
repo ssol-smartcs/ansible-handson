@@ -21,6 +21,9 @@ Ansible × SmartCS × ALAXALAネットワークス
 ### 構成図
 ![practice_environment.png](./contents/image/practice_environment.png)
 
+## ハンズオン資料
+
+- [資料のDL](../contents/pdf/document_Environment%20diagram.pdf)
 
 ## ハンズオン内容
 
