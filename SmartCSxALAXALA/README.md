@@ -23,7 +23,7 @@ Ansible × SmartCS × ALAXALAネットワークス
 
 ## ハンズオン資料
 
-- [資料のDL](./contents/pdf/document_Environment%20diagram.pdf)
+- [資料のDL](./contents/pdf/handson_materials.pdf)
 
 ## ハンズオン内容
 
