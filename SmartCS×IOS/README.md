@@ -1,83 +1,52 @@
-前回コンテンツ(演習4まで)をコピーして移植しました。タイトル以外はalaxala版のままです。(5/27)
+# SmartCS x IOS x Ansible ハンズオン  
 
-・2.1-2.3文中のalaxalaをiosに修正(5/28)
+![handson_logo.png](./contents/image/handson_logo.png)
 
-演習2.1～2.3のCLI画面をios版に変更しました。(6/3)
-気になるところを下記にまとめました。
 
-#### 演習2.1メモ
+## 本ドキュメントについて
 
-◆STEP1
-- ユーザとポート番号を変更
-```
-※ユーザ#1とユーザ#6の場合は8301となります。
-```
-- ユーザとパスワードを変更
-```
-※ユーザ#1の場合はport01/secret01となります。
-```
+本ドキュメントは、Ansibleハンズオンセミナー  
+SmartCS x IOS x Ansible で使用するコンテンツとなります。  
 
-◆STEP2
-- CISCOスイッチのログイン認証が設定されてない？
-```
-続けてログインID（operator）を入力するとIOS装置にログインすることができます。
-```
+本ワークショップのトレーニングは以下を目的としています。  
+- ネットワーク運用の自動化におけるAnsibleの使い方
+- コンソールサーバ SmartCSの使い方
+- Ansible、SmartCS、IOS製品を連携させたネットワーク運用の自動化
 
-◆STEP3
-- バージョン名を変更
-```
-※演習4.3でF/Wバージョンアップを行うので、S/W: OS-LT4 Ver. 2.9 (Build:04)となっている事を確認してください。
-```
-- スイッチが初期化の状態かどうかわからないため、show ruuning-configの実行結果が正しいかが分からない
 
-◆STEP4
-- ログイン認証がないため、ログアウトプロンプトが存在しない
+## ハンズオン環境
 
-#### 演習2.2メモ
+### 構成図
+![practice_environment.png](./contents/image/practice_environment.png)
 
-◆STEP1
-- ユーザとポート番号を変更
-```
-※ユーザ#1とユーザ#6の場合は8301となります。
-```
-- ユーザとパスワードを変更
-```
-※ユーザ#1の場合はport01/secret01となります。
-```
+## ハンズオン資料
 
-◆STEP2
-- CISCOスイッチのログイン認証が設定されてない？
-```
-続けてログインID（operator）を入力するとIOS装置にログインすることができます。
-```
+- [資料](./contents/pdf/handson_materials.pdf)  
+ハンズオンの座学パートで使用する資料となります。
 
-◆STEP3
-- ユーザとポート番号を変更
-```
-※ユーザ#1とユーザ#6の場合は8401となります。
-``` 
-- ユーザとパスワードを変更
-```
-※ユーザ#1の場合はport01/secret01となります。
-```
+## ハンズオン内容
 
-◆STEP5
-- ログイン認証がないため、ログアウトプロンプトが存在しない
+### Section.1 - 演習に向けて
 
-#### 演習2.3メモ
+ - [[**演習1.1** 演習環境の確認]](1.1-preparing_for_the_exercise.md)
 
-◆STEP1
-- ユーザとポート番号を変更
-```
-※ユーザ#1とユーザ#6の場合は8301となります。
-```
-- ユーザとパスワードを変更
-```
-※ユーザ#1の場合はport01/secret01となります。
-```
+### Section.2 - SmartCS基礎演習
 
-◆STEP2
-- ユーザとパスワードを変更
-```
-※ユーザ#1の場合はport01/secret01となります。
-```
+ - [[**演習2.1** SmartCSを介してIOS装置へコンソールアクセスする]](2.1-serial_connection_to_ios_via_smartcs.md)
+ - [[**演習2.2** SmartCSを介したIOS装置へのコンソールアクセスを、別セッションでミラーリングする]](2.2-mirroring_operation_of_smartcs.md)
+ - [[**演習2.3** SmartCSを介したシリアルセッション情報を確認する]](2.3-checking_serial_session_information_of_smartcs.md)
+
+### Section.3 - Ansible × SmartCS × IOS の連携演習基礎
+
+ - [[**演習3.1** IOS装置にSmartCS経由で初期設定を行う]](3.1-initial_setup_the_ios_device_via_smartcs.md)
+ - [[**演習3.2** IOS装置に追加設定を行う]](3.2-additional_setup_the_ios_device.md)
+ - [[**演習3.3** IOS装置の設定情報を取得する]](3.3-get_ios_device_information.md)
+ - [[**演習3.4** IOS装置の設定情報をSmartCS経由で取得する]](3.4-setting_of_ios_device_via_smartcs.md)
+
+### Section.4 - Ansible × SmartCS × IOS の連携演習応用(ユースケース)
+
+ - [[**演習4.1** オペミスからの復旧自動化]](4.1-automation_of_operation_error_recovery.md)
+ - [[**演習4.2** 通信障害からの復旧自動化]](4.2-automation_of_recovery_from_network_communication_failures.md)
+ - [[**演習4.3** ファームウェアアップデートの自動化]](4.3-automation_of_firmware_update.md)
+ - [[**演習4.4** 初期化の自動化]](4.4-automation_of_initialization.md)
+  
