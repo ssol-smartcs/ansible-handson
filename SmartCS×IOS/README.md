@@ -47,6 +47,5 @@ SmartCS x IOS x Ansible で使用するコンテンツとなります。
 
  - [[**演習4.1** オペミスからの復旧自動化]](4.1-automation_of_operation_error_recovery.md)
  - [[**演習4.2** 通信障害からの復旧自動化]](4.2-automation_of_recovery_from_network_communication_failures.md)
- - [[**演習4.3** ファームウェアアップデートの自動化]](4.3-automation_of_firmware_update.md)
- - [[**演習4.4** 初期化の自動化]](4.4-automation_of_initialization.md)
+ - [[**演習4.3** 初期化の自動化]](4.3-automation_of_initialization.md)
   
