@@ -21,8 +21,8 @@ SmartCS x IOS x Ansible で使用するコンテンツとなります。
 
 ## ハンズオン資料
 
-- [資料](./contents/pdf/handson_materials.pdf)  
-ハンズオンの座学パートで使用する資料となります。
+- [SmartCS、およびSmartCS×Ansible連携の概要](./contents/pdf/Ansible_handson_smartcs-ios.pdf)  
+ハンズオンの座学パート(SmartCS編)で使用する資料となります。
 
 ## ハンズオン内容
 
