@@ -1,0 +1,25 @@
+---
+- name: Execute IOS show version command from console using SmartCS
+  hosts: smartcs
+  gather_facts: no
+  
+  vars:
+  - tty_no: "{{ hostvars['ios']['smartcs_tty'] }}"
+  
+  tasks:
+  - name: show version (IOS command) 
+    seiko.smartcs.smartcs_tty_command:
+      tty: "{{ tty_no }}"
+      recvchar:
+      - "started."
+      - "Switch1>"
+      - "Switch1#"
+      - "Password: " 
+      sendchar:
+      - __NL__
+      - enable
+      - cisco
+      - terminal length 0
+      - disable
+      - show version
+      - exit

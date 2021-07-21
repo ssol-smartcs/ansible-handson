@@ -1,0 +1,50 @@
+---
+- name: ansible-reach settings from console using SmartCS
+  hosts: smartcs
+  gather_facts: no 
+
+  vars:
+  - tty_no: "{{ hostvars['ios']['smartcs_tty'] }}"  
+  - ios_ipaddr: "{{ hostvars['ios']['ansible_host'] }}"
+  - ios_user: "{{ hostvars['ios']['ansible_user'] }}"
+  - ios_password: "{{ hostvars['ios']['ansible_password'] }}"
+  
+  - ios_subnet: '255.255.255.0'
+  - ios_gateway: '192.168.128.254'
+
+  tasks:
+  - name: setting ipaddr and ssh
+    seiko.smartcs.smartcs_tty_command:
+      tty: "{{ tty_no }}"
+      custom_response: on
+      custom_response_delete_nl: on
+      recvchar:
+      - "started."
+      - "Switch1>"
+      - "Switch1#"
+      - "Switch1(config)#"
+      - "Switch1(config-if)#"
+      - "Switch1(config-line)#"
+      - "Password: "
+      sendchar:
+      - __NL__
+      - enable
+      - secret3550
+      - configure terminal
+      - interface vlan1
+      - ip address {{ ios_ipaddr }} {{ ios_subnet }}
+      - no shutdown
+      - exit
+      - ip default-gateway {{ ios_gateway }}
+      - line vty 0 1
+      - login local
+      - transport input ssh
+      - exit
+      - exit
+      - copy running-config startup-config
+      - exit
+    register: result
+
+  - name: register stdout_lines_custom
+    debug:
+      msg: '{{ result.stdout_lines_custom }}'
