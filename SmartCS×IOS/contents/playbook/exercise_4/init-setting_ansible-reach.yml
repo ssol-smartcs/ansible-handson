@@ -1,0 +1,9 @@
+---
+- name: login by console
+  import_playbook: console_login.yml
+
+- name: init-setting (ansible-reach)
+  import_playbook: console_init-setting_ansible-reach.yml
+
+- name: logout by console
+  import_playbook: console_logout.yml

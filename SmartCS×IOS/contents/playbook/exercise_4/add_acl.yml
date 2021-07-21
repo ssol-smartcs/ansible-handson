@@ -1,0 +1,22 @@
+---
+- name: add acl configration
+  hosts: ios
+  
+  vars:
+  - EC2_Global_ipaddr: "{{ hostvars['controll']['ansible_host'] }}"
+
+  tasks:
+  - name: configure access list
+    cisco.ios.ios_config:
+      lines:
+        - 10 permit host {{ EC2_Global_ipaddr }}
+        - 20 deny any
+      parents: ip access-list standard access_ansible_host_only
+      save_when: changed
+  
+  - name: set access-list to intarface 
+    cisco.ios.ios_config:
+      lines:
+        - ip access-group  in access_ansible_host_only
+      parents: interface vlan 1
+      save_when: changed
