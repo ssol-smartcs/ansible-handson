@@ -13,20 +13,20 @@
   - name: configure ntp server
     cisco.ios.ios_config:
       lines:
-        - ntp server "{{ item }}"
+        - ntp server {{ item }}
       save_when: changed
-    loop: "{{ ntp.server }}"
+    loop: '{{ ntp.server }}'
 
   - name: configure snmp community
     cisco.ios.ios_config:
       lines:
-        - snmp-server community "{{ item.name }}" "{{ item.auth }}"
+        - snmp-server community {{ item.name }} {{ item.auth }}
       save_when: changed
-    loop: "{{ snmp.community }}"
-  
+    loop: '{{ snmp.community }}'
+
   - name: configure syslog server
     cisco.ios.ios_config:
       lines:
-        - logging host "{{ item }}"
+        - logging host {{ item }}
       save_when: changed
-    loop: "{{ syslog.server }}"
+    loop: '{{ syslog.server }}'

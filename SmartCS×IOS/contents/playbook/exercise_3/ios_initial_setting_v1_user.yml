@@ -2,30 +2,33 @@
 - name: user settings from console using SartCS
   hosts: smartcs
   gather_facts: no
-  
+
   vars:
-  - tty_no: "{{ hostvars['ios']['smartcs_tty'] }}"  
-  - ios_user: "{{ hostvars['ios']['ansible_user'] }}"
-  - ios_password: "{{ hostvars['ios']['ansible_password'] }}"
+  - tty_no: "{{ hostvars['ios']['smartcs_tty'] }}" 
+  - ios_user: "{{ hostvars['ios']['ansible_user'] }}" 
+  - ios_password: "{{ hostvars['ios']['ansible_password'] }}" 
 
   tasks:
   - name: rename login user and setting password
     seiko.smartcs.smartcs_tty_command:
-      tty: "{{ tty_no }}"
+      tty: "{{ tty_no }}" 
       custom_response: on
       custom_response_delete_nl: on
+      error_detect_on_module: failed
       recvchar:
-      - "started."
-      - "Switch1>"
-      - "Switch1#"
-      - "Switch1(config)#"
-      - "Password: "
+      - 'Switch>'
+      - 'Switch#'
+      - 'Switch(config)#'
+      - 'Switch(config-line)#'
+      - 'Press RETURN to get started.'
       sendchar:
-      - __NL__
-      - enable
-      - cisco
-      - configure terminal
-      - username {{ ios_user }} password {{ ios_password }}
-      - enable password {{ ios_password }}
-      - exit
-      - exit
+      - '__NL__'
+      - 'enable'
+      - 'configure terminal'
+      - 'username {{ ios_user }} password {{ ios_password }}'
+      - 'enable password {{ ios_password }}'
+      - 'line console 0'
+      - 'password {{ ios_password }}'
+      - 'login local'
+      - 'end'
+      - 'exit'
