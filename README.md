@@ -13,7 +13,7 @@ SmartCS x Ansible のハンズオンコンテンツをまとめたページと�
 - 時間：1月31日（金）13時〜18時（受付12時30分より）  
 場所：エーピーコミュニケーションズ 様
 
-### [SmartCS x IOS x Ansible ハンズオン(第1回)](https://github.com/ssol-smartcs/ansible-handson/tree/2021.07.29/SmartCS%C3%97IOS)
+### [SmartCS x IOS x Ansible ハンズオン(第1回)](https://github.com/ssol-smartcs/ansible-handson/blob/2021.07.29/SmartCS%C3%97IOS/README.md)
 
 - 時間：7月29日（木）13時〜17時（受付12時50分より）  
 場所：オンライン開催＠Zoom
