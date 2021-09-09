@@ -2,30 +2,31 @@
 - name: set initial configuration from console using SmartCS
   hosts: ios_sshxpt
   gather_facts: no
-  
-  vars:  
-  - ios_ipaddr: "{{ hostvars['ios']['ansible_host'] }}"  
+
+  vars:
+  - ios_ipaddr: "{{ hostvars['ios']['ansible_host'] }}"
   - ios_subnet: '255.255.255.0'
 
   tasks:
   - name: set ipaddr to intarface vlan 1
     cisco.ios.ios_config:
       lines:
-        - 'ip address {{ ios_ipaddr }} {{ ios_subnet }}'
+        - ip address {{ ios_ipaddr }} {{ ios_subnet }}
+        - no shutdown
       parents: interface vlan 1
       save_when: changed
-  
-  - name: intarface up
+
+  - name: interface up
     cisco.ios.ios_config:
       lines:
-        - 'no shutdown'
-      parents: interface gigabitethernet 0/1
+        - no shutdown
+      parents: interface fastethernet 0/1
       save_when: changed
-  
-  - name: enable ssh 
+
+  - name: enable ssh
     cisco.ios.ios_config:
       lines:
-        - 'line vty 0 1'
-        - 'transport input ssh'
-      #parents: line vty 0 1
+        - login local
+        - transport input ssh
+      parents: line vty 0 1
       save_when: changed

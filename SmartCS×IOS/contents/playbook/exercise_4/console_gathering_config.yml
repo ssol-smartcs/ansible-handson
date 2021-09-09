@@ -9,4 +9,5 @@
       commands:
         - show ip interface
         - show vlan
+        - show access-list
         - show running-config
