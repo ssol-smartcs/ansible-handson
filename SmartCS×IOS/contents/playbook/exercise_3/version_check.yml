@@ -1,5 +1,5 @@
 ---
-- name: save show commands output to localfile
+- name: checking s/w version using assert
   hosts: ios
   gather_facts: no
 
@@ -13,7 +13,7 @@
         - show version
     register: result
   
-  - name: check Software version
+  - name: check s/w version
     assert:
       that: "'{{ os_version }}' in '{{ result.stdout_lines[0][0] }}'"
       fail_msg: "ios Software Version is not '{{ os_version }}'"

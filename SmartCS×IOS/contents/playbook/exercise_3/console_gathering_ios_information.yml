@@ -10,10 +10,10 @@
         - show version
         - show interfaces gigabitethernet 0/1
         - show ip interface
-        - show vlan 
+        - show vlan
         - show running-config
     register: result
-  
+
   - name: show command output
     debug:
       msg:

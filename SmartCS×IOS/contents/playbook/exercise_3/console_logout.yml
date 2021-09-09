@@ -1,18 +1,20 @@
 ---
-- name: Login from Console using SmartCS
+- name: Logout from Console using SmartCS
   hosts: smartcs
   gather_facts: no
-  
+
   vars:
   - tty_no: "{{ hostvars['ios']['smartcs_tty'] }}"
-  
+
   - ansible_command_timeout: 60
 
   tasks:
   - name: logout cat3550
     seiko.smartcs.smartcs_tty_command:
       tty: '{{ tty_no }}'
+      error_detect_on_module: failed
       recvchar:
-      - "Switch1>"
+      - 'Cat3550#'
+      - 'Press RETURN to get started.'
       sendchar:
-      - exit
+      - 'exit'
