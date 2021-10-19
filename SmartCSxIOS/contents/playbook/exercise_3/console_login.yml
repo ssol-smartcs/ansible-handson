@@ -1,0 +1,24 @@
+---
+- name: Login from Console using SmartCS
+  hosts: smartcs
+  gather_facts: no
+
+  vars:
+  - tty_no: "{{ hostvars['ios']['smartcs_tty'] }}"
+  - ios_password: "{{ hostvars['ios']['ansible_password'] }}"
+
+  - ansible_command_timeout: 60
+
+  tasks:
+  - name: login cat3550
+    seiko.smartcs.smartcs_tty_command:
+      tty: '{{ tty_no }}'
+      error_detect_on_module: failed
+      recvchar:
+      - 'Username: '
+      - 'Password: '
+      - 'Cat3550>'
+      sendchar:
+      - '__NL__'
+      - 'cisco'
+      - '{{ ios_password }}'
