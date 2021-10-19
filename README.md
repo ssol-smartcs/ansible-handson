@@ -23,7 +23,7 @@ SmartCS x Ansible のハンズオンコンテンツをまとめたページと�
 - 時間：9月16日（木）13時〜17時（受付12時50分より）  
 場所：オンライン開催＠Zoom
 
-### [SmartCS x IOS x Ansible ハンズオン(第3回)](./SmartCS×IOS/README.md)
+### [SmartCS x IOS x Ansible ハンズオン(第3回)](./SmartCSxIOS/README.md)
 
 - 時間：10月21日（木）13時〜17時（受付12時50分より）  
 場所：オンライン開催＠Zoom
