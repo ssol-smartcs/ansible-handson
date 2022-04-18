@@ -33,7 +33,7 @@ SmartCS x IOS x Ansible で使用するコンテンツとなります。
 
  - [[**演習1.1** 演習環境の確認]](1.1-preparing_for_the_exercise.md)
 
-### 演習2 - SmartCS基礎演習　※4/22 第6回ハンズオンでは実施しません。
+### 演習2 - SmartCS基礎演習　※4/21 第6回ハンズオンでは実施しません。
 
  - [[**演習2.1** SmartCSを介してIOS装置へコンソールアクセスする]](2.1-serial_connection_to_ios_via_smartcs.md)
  - [[**演習2.2** SmartCSを介したIOS装置へのコンソールアクセスを、別セッションでミラーリングする]](2.2-mirroring_operation_of_smartcs.md)
@@ -46,7 +46,7 @@ SmartCS x IOS x Ansible で使用するコンテンツとなります。
  - [[**演習3.3** IOS装置の設定情報を取得する]](3.3-get_ios_device_information.md)
  - [[**演習3.4** IOS装置の設定情報をSmartCS経由で取得する]](3.4-setting_of_ios_device_via_smartcs.md)
 
-### 演習4 - Ansible × SmartCS × IOS の連携演習応用(ユースケース)　※4/22 第6回ハンズオンでは実施しません。
+### 演習4 - Ansible × SmartCS × IOS の連携演習応用(ユースケース)　※4/21 第6回ハンズオンでは実施しません。
 
  - [[**演習4.1** オペミスからの復旧自動化]](4.1-automation_of_operation_error_recovery.md)
  - [[**演習4.2** 通信障害からの復旧自動化]](4.2-automation_of_recovery_from_network_communication_failures.md)
