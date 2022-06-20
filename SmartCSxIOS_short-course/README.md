@@ -6,7 +6,7 @@
 ## 本ドキュメントについて
 
 本ドキュメントは、Ansibleハンズオンセミナー  
-SmartCS x IOS x Ansible で使用するコンテンツとなります。  
+SmartCS x IOS x Ansible(ショート版) で使用するコンテンツとなります。  
 
 本ワークショップのトレーニングは以下を目的としています。  
 - ネットワーク運用の自動化におけるAnsibleの使い方
@@ -45,10 +45,4 @@ SmartCS x IOS x Ansible で使用するコンテンツとなります。
  - [[**演習3.2** IOS装置に追加設定を行う]](3.2-additional_setup_the_ios_device.md)
  - [[**演習3.3** IOS装置の設定情報を取得する]](3.3-get_ios_device_information.md)
  - [[**演習3.4** IOS装置の設定情報をSmartCS経由で取得する]](3.4-setting_of_ios_device_via_smartcs.md)
-
-### 演習4 - Ansible × SmartCS × IOS の連携演習応用(ユースケース)　※4/21 第6回ハンズオンでは実施しません。
-
- - [[**演習4.1** オペミスからの復旧自動化]](4.1-automation_of_operation_error_recovery.md)
- - [[**演習4.2** 通信障害からの復旧自動化]](4.2-automation_of_recovery_from_network_communication_failures.md)
- - [[**演習4.3** 初期化の自動化]](4.3-automation_of_initialization.md)
   
