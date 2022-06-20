@@ -1,0 +1,32 @@
+---
+- name: add hostname and server(ntp, snmp, syslog)
+  hosts: ios
+  gather_facts: no
+
+  tasks:
+  - name: configure hostname
+    cisco.ios.ios_config:
+      lines:
+        - hostname Cat3550
+      save_when: changed
+
+  - name: configure ntp server
+    cisco.ios.ios_config:
+      lines:
+        - ntp server {{ item }}
+      save_when: changed
+    loop: '{{ ntp.server }}'
+
+  - name: configure snmp community
+    cisco.ios.ios_config:
+      lines:
+        - snmp-server community {{ item.name }} {{ item.auth }}
+      save_when: changed
+    loop: '{{ snmp.community }}'
+
+  - name: configure syslog server
+    cisco.ios.ios_config:
+      lines:
+        - logging host {{ item }}
+      save_when: changed
+    loop: '{{ syslog.server }}'
