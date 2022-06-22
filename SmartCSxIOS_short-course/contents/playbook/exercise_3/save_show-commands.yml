@@ -1,0 +1,24 @@
+---
+- name: ios show commands
+  hosts: ios
+  gather_facts: no
+
+  vars:
+  - ansible_command_timeout: 60
+
+  tasks:
+  - name: execute show commands
+    cisco.ios.ios_command:
+      commands:
+        - show version
+        - show interfaces gigabitethernet 0/1
+        - show ip interface
+        - show port
+        - show vlan
+        - show running-config
+    register: result
+  
+  - name: save to localfile
+    copy:
+      content:  "{{ result.stdout_lines[5] | join('\n') }}"
+      dest: ./ios_commands.txt
