@@ -33,16 +33,10 @@ SmartCS x IOS x Ansible(ショート版) で使用するコンテンツとなり
 
  - [[**演習1.1** 演習環境の確認]](1.1-preparing_for_the_exercise.md)
 
-### 演習2 - SmartCS基礎演習　※4/21 第6回ハンズオンでは実施しません。
+### 演習2 - Ansible × SmartCS × IOS の連携演習基礎
 
- - [[**演習2.1** SmartCSを介してIOS装置へコンソールアクセスする]](2.1-serial_connection_to_ios_via_smartcs.md)
- - [[**演習2.2** SmartCSを介したIOS装置へのコンソールアクセスを、別セッションでミラーリングする]](2.2-mirroring_operation_of_smartcs.md)
- - [[**演習2.3** SmartCSを介したシリアルセッション情報を確認する]](2.3-checking_serial_session_information_of_smartcs.md)
-
-### 演習3 - Ansible × SmartCS × IOS の連携演習基礎
-
- - [[**演習3.1** IOS装置にSmartCS経由で初期設定を行う]](3.1-initial_setup_the_ios_device_via_smartcs.md)
- - [[**演習3.2** IOS装置に追加設定を行う]](3.2-additional_setup_the_ios_device.md)
- - [[**演習3.3** IOS装置の設定情報を取得する]](3.3-get_ios_device_information.md)
- - [[**演習3.4** IOS装置の設定情報をSmartCS経由で取得する]](3.4-setting_of_ios_device_via_smartcs.md)
+ - [[**演習2.1** IOS装置にSmartCS経由で初期設定を行う]](2.1-initial_setup_the_ios_device_via_smartcs.md)
+ - [[**演習2.2** IOS装置に追加設定を行う]](2.2-additional_setup_the_ios_device.md)
+ - [[**演習2.3** IOS装置の設定情報を取得する]](2.3-get_ios_device_information.md)
+ - [[**演習2.4** IOS装置の設定情報をSmartCS経由で取得する]](2.4-setting_of_ios_device_via_smartcs.md)
   
