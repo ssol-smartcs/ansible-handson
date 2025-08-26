@@ -8,7 +8,12 @@ SmartCS x Ansible のハンズオンコンテンツをまとめたページと�
 
 # ハンズオン コンテンツ
 
-### [SmartCS x IOS x Ansible ハンズオン(第19回)](./SmartCSxIOS_short-course/README.md)
+### [SmartCS x IOS x Ansible ハンズオン(第20回)](./SmartCSxIOS_short-course/README.md)
+
+- 時間：2025年8月28日（水）13時30分〜16時30分（受付13時20分より）  
+場所：オンライン開催＠Zoom
+
+### [SmartCS x IOS x Ansible ハンズオン(第19回)](https://github.com/ssol-smartcs/ansible-handson/blob/2025.04.23/SmartCSxIOS_short-course/README.md)
 
 - 時間：2025年4月23日（水）13時30分〜16時30分（受付13時20分より）  
 場所：オンライン開催＠Zoom
