@@ -17,7 +17,7 @@ SmartCS x IOS x Ansible(ショート版) で使用するコンテンツとなり
 ## ハンズオン環境
 
 ### 構成図
-![practice_environment.png](./contents/image/practice_environment.png)
+![practice_environment.png](./contents/image/practice_environment.png.png)
 
 ## ハンズオン資料
 
